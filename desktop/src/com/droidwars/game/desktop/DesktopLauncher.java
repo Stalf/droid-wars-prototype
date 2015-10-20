@@ -13,7 +13,7 @@ public class DesktopLauncher {
         config.height = Constants.APP_HEIGHT;
         config.title = Constants.GAME_NAME;
 
-        config.resizable = false;
+//        config.resizable = false;
 
         new LwjglApplication(new DroidWarsGame(), config);
     }

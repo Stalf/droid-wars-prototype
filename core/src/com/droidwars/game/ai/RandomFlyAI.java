@@ -1,6 +1,5 @@
 package com.droidwars.game.ai;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.droidwars.game.objects.ships.Ship;
@@ -33,23 +32,17 @@ public class RandomFlyAI extends AbstractShipAI {
         // Угол между требуемым направлением на цель и кораблем
         float angle = MathUtils.round(ship.facing.angle(targetDirection));
 
-        Gdx.app.log("ship"+String.valueOf(ship.id), String.format("angle: %.2f", angle));
-        Gdx.app.log("ship"+String.valueOf(ship.id), String.format("velocity: %.2f", ship.velocity.len()));
-        Gdx.app.log("ship"+String.valueOf(ship.id), String.format("velocity projection: %.2f", ship.velocity.dot(targetDirection)));
         // Проверяем смотрит ли корабль в требуемом направлении
         if (angle == 0) {
             // Проверяем скорость в заданном направлении
             if (ship.velocity.dot(targetDirection) >= targetVelocity) {
-                Gdx.app.log("ship"+String.valueOf(ship.id), "new direction");
                 // Если необходимая скорость достигнута - генерируем новое случайное направление
                 targetDirection.set(GameUtils.generateRandomDirection());
             } else {
-                Gdx.app.log("ship"+String.valueOf(ship.id), "thrust");
                 // иначе - даем газу
                 ship.thrust();
             }
         } else {
-            Gdx.app.log("ship"+String.valueOf(ship.id), "turn");
             // Если нет - поворачиваем корабль
             ship.turn(targetDirection);
         }
