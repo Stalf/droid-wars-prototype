@@ -10,7 +10,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.droidwars.game.GameInstance;
 import com.droidwars.game.background.BackgroundFXRenderer;
 import com.droidwars.game.utils.Constants;
-import com.droidwars.game.utils.GameUtils;
 
 public class GameScreen extends DefaultScreen implements InputProcessor {
 
@@ -42,8 +41,8 @@ public class GameScreen extends DefaultScreen implements InputProcessor {
 
     @Override
     public void resize(int width, int height) {
-        cam.viewportHeight = height;
-        cam.viewportWidth = width;
+        cam.viewportHeight = Constants.MAP_HEIGHT;
+        cam.viewportWidth = Constants.MAP_WIDTH;
 
         cam.update();
 
@@ -74,7 +73,7 @@ public class GameScreen extends DefaultScreen implements InputProcessor {
         hud.render();
 
         if (GameInstance.getInstance().gameOver) {
-           hud.renderGameOver();
+            hud.renderGameOver();
         }
 
     }

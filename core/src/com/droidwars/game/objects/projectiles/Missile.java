@@ -1,6 +1,5 @@
 package com.droidwars.game.objects.projectiles;
 
-import com.badlogic.gdx.math.Vector2;
 import com.droidwars.game.Resources;
 import com.droidwars.game.objects.ships.Ship;
 
