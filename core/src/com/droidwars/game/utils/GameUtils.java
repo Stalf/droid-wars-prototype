@@ -11,6 +11,8 @@ import com.droidwars.game.objects.ships.Ship;
 
 public class GameUtils {
 
+    public final static float EPSILON = 0.001f;
+
     /**
      * Генерирует случайный нормализованный вектор направления
      *
@@ -110,4 +112,16 @@ public class GameUtils {
             GameInstance.getInstance().explosionParticles.addMediumExplosion(projectile.position);
         }
     }
+
+    /**
+     * Проверяет равенство двух вещественных чисел с точностью до eps
+     *
+     * Простейший способ
+     */
+    public static boolean equals(float a, float b, float eps) {
+        return a == b || Math.abs(a - b) < eps;
+
+    }
+
+
 }

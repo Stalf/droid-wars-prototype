@@ -17,6 +17,7 @@ public abstract class Ship extends GameObject {
     protected float accel = 0.0f;
     protected float hitPoints = 0;
     protected float maxHitPoints = 0;
+    protected float strafe = 0.0f;
 
     public ShipAI ai = new NullAI();
 
@@ -75,6 +76,15 @@ public abstract class Ship extends GameObject {
      */
     public void thrust() {
         velocity.add(facing.x * accel * delta, facing.y * accel * delta);
+    }
+
+    /**
+     * Придает кораблю боковое ускорение (в направлении, перпендикулярном текущему расположению)
+     *
+     * @param direction направление смещения. -1 - влево, 1 - вправо
+     */
+    public void strafe(int direction) {
+        velocity.add(facing.y * strafe * direction * delta, -facing.x * strafe * direction * delta);
     }
 
     /**
