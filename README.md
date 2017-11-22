@@ -1,8 +1,8 @@
-#Прототип игры Droid Wars
+#Droid Wars prototype
 
-Для запуска требуется JDK 1.7 и Gradle 2.4.
+You need JDK 1.7 and Gradle 2.4 to build and start it.
 
-[Старт приложения](https://github.com/libgdx/libgdx/wiki/Gradle-on-the-Commandline#running-the-desktop-project) на desktop: 
+[How to run on destop](https://github.com/libgdx/libgdx/wiki/Gradle-on-the-Commandline#running-the-desktop-project): 
 ```
 gradlew desktop:run
 ```
