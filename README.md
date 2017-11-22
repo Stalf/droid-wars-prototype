@@ -1,4 +1,4 @@
-#Droid Wars prototype
+# Droid Wars prototype
 
 You need JDK 1.7 and Gradle 2.4 to build and start it.
 
